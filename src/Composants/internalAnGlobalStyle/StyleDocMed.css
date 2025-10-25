@@ -1,0 +1,609 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
+.Orlia {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --accent-color: #e74c3c;
+  --light-color: #ecf0f1;
+  --dark-color: #2c3e50;
+  --success-color: #27ae60;
+  --transition-speed: 0.4s;
+}
+
+.Orlia * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.Orlia {
+  background-color: #f5f7fa;
+  color: var(--dark-color);
+  line-height: 1.6;
+  padding-top: 80px; /* Pour compenser la navbar fixe */
+  width: 1500px;
+  padding: 50px;
+}
+
+/* Navigation fixe */
+.Orlia header {
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  transition: all var(--transition-speed) ease;
+}
+
+.Orlia .header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.Orlia .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  transition: transform 0.3s;
+}
+
+.Orlia .logo:hover {
+  transform: scale(1.05);
+}
+
+.Orlia .logo span {
+  color: var(--secondary-color);
+}
+
+.Orlia nav ul {
+  display: flex;
+  list-style: none;
+}
+
+.Orlia nav ul li {
+  margin-left: 1.5rem;
+  position: relative;
+}
+
+.Orlia nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.Orlia nav ul li a i {
+  margin-right: 0.5rem;
+}
+
+.Orlia nav ul li a:hover {
+  color: var(--secondary-color);
+}
+
+/* Effet de soulignement au survol */
+.Orlia nav ul li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--secondary-color);
+  transition: width var(--transition-speed) ease;
+}
+
+.Orlia nav ul li:hover::after {
+  width: 100%;
+}
+
+.Orlia .container {
+  margin: 2rem auto;
+  padding: 0 2rem;
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.Orlia .page-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+.Orlia .page-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--secondary-color), transparent);
+  border-radius: 2px;
+}
+
+.Orlia .card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.Orlia .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.Orlia .card-title {
+  font-size: 1.6rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-bottom: 0.8rem;
+}
+
+.Orlia .card-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: var(--secondary-color);
+  border-radius: 3px;
+}
+
+.Orlia .card-title i {
+  margin-right: 1rem;
+  color: var(--secondary-color);
+  font-size: 1.8rem;
+}
+
+.Orlia .upload-section {
+  border: 2px dashed #ccc;
+  padding: 3rem 2rem;
+  text-align: center;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  transition: all var(--transition-speed);
+  background-color: rgba(52, 152, 219, 0.03);
+  cursor: pointer;
+}
+
+.Orlia .upload-section:hover {
+  border-color: var(--secondary-color);
+  background-color: rgba(52, 152, 219, 0.08);
+  transform: scale(1.01);
+}
+
+.Orlia .upload-icon {
+  font-size: 3.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s;
+}
+
+.Orlia .upload-section:hover .upload-icon {
+  transform: translateY(-5px);
+}
+
+.Orlia .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all var(--transition-speed);
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+}
+
+.Orlia .btn:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(52, 152, 219, 0.4);
+}
+
+.Orlia .btn:active {
+  transform: translateY(0);
+}
+
+.Orlia .btn i {
+  margin-right: 0.8rem;
+}
+
+.Orlia .btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--secondary-color);
+  color: var(--secondary-color);
+  box-shadow: none;
+}
+
+.Orlia .btn-outline:hover {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.Orlia .btn-accent {
+  background-color: var(--accent-color);
+  box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+}
+
+.Orlia .btn-accent:hover {
+  background-color: #c0392b;
+  box-shadow: 0 6px 12px rgba(231, 76, 60, 0.4);
+}
+
+.Orlia .document-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.8rem;
+  margin-top: 2rem;
+}
+
+.Orlia .document-item {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  transition: all var(--transition-speed);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.Orlia .document-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: var(--secondary-color);
+  transition: width 0.3s;
+}
+
+.Orlia .document-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.Orlia .document-item:hover::before {
+  width: 8px;
+}
+
+.Orlia .document-icon {
+  font-size: 2.2rem;
+  margin-right: 1.2rem;
+  color: var(--secondary-color);
+  min-width: 40px;
+  text-align: center;
+}
+
+.Orlia .document-info {
+  flex: 1;
+}
+
+.Orlia .document-name {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+}
+
+.Orlia .document-type {
+  font-size: 0.95rem;
+  color: #7f8c8d;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.Orlia .document-date {
+  font-size: 0.85rem;
+  color: #95a5a6;
+  display: flex;
+  align-items: center;
+}
+
+.Orlia .document-date i {
+  margin-right: 0.3rem;
+  font-size: 0.9rem;
+}
+
+.Orlia .document-actions {
+  display: flex;
+  gap: 0.8rem;
+  margin-left: 1rem;
+}
+
+.Orlia .document-actions .btn {
+  padding: 0.6rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.Orlia .section-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--secondary-color),
+    transparent
+  );
+  margin: 3rem 0;
+  opacity: 0.3;
+}
+
+.Orlia .features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.Orlia .feature-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  text-align: center;
+  transition: all var(--transition-speed);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.Orlia .feature-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--secondary-color),
+    var(--accent-color)
+  );
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-speed) ease;
+}
+
+.Orlia .feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.Orlia .feature-card:hover::after {
+  transform: scaleX(1);
+}
+
+.Orlia .feature-icon {
+  font-size: 3rem;
+  color: var(--secondary-color);
+  margin-bottom: 1.5rem;
+  transition: transform 0.5s ease;
+}
+
+.Orlia .feature-card:hover .feature-icon {
+  transform: rotateY(360deg);
+}
+
+.Orlia .feature-title {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.Orlia .tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.Orlia .badge {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.Orlia .badge i {
+  margin-right: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.Orlia .badge:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.Orlia .badge-primary {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.Orlia .badge-accent {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.Orlia .badge-success {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.Orlia footer {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 3rem 2rem;
+  text-align: center;
+  margin-top: 4rem;
+  position: relative;
+}
+
+.Orlia footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--secondary-color),
+    var(--accent-color)
+  );
+}
+
+.Orlia .footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.Orlia .footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.Orlia .footer-links a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 0.3rem;
+}
+
+.Orlia .footer-links a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--secondary-color);
+  transition: width 0.3s;
+}
+
+.Orlia .footer-links a:hover {
+  color: var(--secondary-color);
+}
+
+.Orlia .footer-links a:hover::after {
+  width: 100%;
+}
+
+.Orlia .copyright {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+.Orlia .certification {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.Orlia .certification i {
+  color: var(--success-color);
+}
+
+/* Animation des éléments au scroll */
+.Orlia .animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.Orlia .animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px;
+  }
+
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .Orlia nav ul {
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .Orlia nav ul li {
+    margin: 0.5rem;
+  }
+
+  .document-list,
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .Orlia .page-title {
+    font-size: 2rem;
+  }
+
+  .Orlia .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}
