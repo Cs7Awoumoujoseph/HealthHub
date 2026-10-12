@@ -1,4 +1,4 @@
-# HealthHub — Interface de gestion des remboursements santé
+# HealthHub — Interface de gestion des remboursements dans les consultations de santé
 
 HealthHub est une application web front-end construite avec **React** et **Vite**. Le projet présente une interface de type espace assuré, organisée autour des remboursements, du suivi des demandes, des contrats, des documents médicaux et du compte utilisateur.
 
