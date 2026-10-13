@@ -102,7 +102,7 @@ HealthHub/
 - Ajouter les états de chargement, les messages d'erreur et les états vides.
 - Mettre en place l'authentification et le contrôle d'accès avant d'exposer des informations personnelles.
 - Vérifier l'accessibilité et l'affichage sur mobile.
-- Mettre à jour le titre de la page dans `index.html`, qui utilise encore le titre générique `Vite + React`.
+- Ajouter des tests de composants et des vérifications automatisées de l’accessibilité.
 
 ## Sécurité et confidentialité
 
